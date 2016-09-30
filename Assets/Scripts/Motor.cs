@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Motor : MonoBehaviour {
 
+    public float MAX_POWER = 5;
+
     public enum InputType {wasd, arrows};
     public enum MotorSide { right, left };
 
@@ -27,9 +29,13 @@ public class Motor : MonoBehaviour {
         if (input < 0) input = -1;
         if (input > 0) input = 1;
         power = power + input/10;
+        if (power > MAX_POWER)
+            power = MAX_POWER;
+        if (power < -MAX_POWER)
+            power = -MAX_POWER;
 
-        float th = parent.rotation.z - Mathf.PI/2;
-        //Debug.LogError("Th = " + th);
+        float th = parent.rotation.eulerAngles.z + 90;
+        th = th * Mathf.PI / 180;
         GetComponent<Rigidbody2D>().velocity = new Vector2(power*Mathf.Cos(th),power * Mathf.Sin(th));
 	}
 }

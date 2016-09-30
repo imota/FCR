@@ -21,8 +21,8 @@ GameObject:
   - 4: {fileID: 4000011274002118}
   - 212: {fileID: 212000012805071588}
   - 50: {fileID: 50000013736529312}
-  - 232: {fileID: 232000010373274330}
   - 114: {fileID: 114000010472159858}
+  - 255: {fileID: 255000011966370674}
   m_Layer: 0
   m_Name: Wheel
   m_TagString: Untagged
@@ -102,13 +102,13 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 25a5ba0338a2b1c41aba78efe07fb042, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
---- !u!232 &232000010373274330
-DistanceJoint2D:
+--- !u!255 &255000011966370674
+FixedJoint2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -119,9 +119,8 @@ DistanceJoint2D:
   m_ConnectedRigidBody: {fileID: 0}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
+  m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: 0}
-  m_AutoConfigureDistance: 1
-  m_Distance: 0.4
-  m_MaxDistanceOnly: 0
+  m_ConnectedAnchor: {x: 0.4, y: 0}
+  m_DampingRatio: 0
+  m_Frequency: 0
